@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Spello</string>
     <string name="welcome">Welcome To Spello</string>
+    <string name="play">Play</string>
 </resources>
