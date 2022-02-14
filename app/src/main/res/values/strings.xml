@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Spello</string>
+    <string name="welcome">Welcome To Spello</string>
 </resources>
