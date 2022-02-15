@@ -17,6 +17,7 @@
         app:layout_constraintVertical_bias="0.393" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="409dp"
         android:layout_height="354dp"
         android:stretchColumns="*"
@@ -26,17 +27,108 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
 
             <Button
+                style="@style/keyButton"
                 android:id="@+id/qKey"
                 android:layout_width="@dimen/keyWidth"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
                 android:backgroundTint="@color/activeButtonCol"
-                android:paddingLeft="@dimen/keyPad"
-                android:paddingRight="@dimen/keyPad"
                 android:text="@string/q"
-                android:textSize="12sp"
+                android:textSize="10sp"
+                tools:ignore="SmallSp,TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey34"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey33"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey26"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey27"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey28"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey29"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey30"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey31"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/qKey32"
+                android:layout_width="@dimen/keyWidth"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/keyPad"
+                android:backgroundTint="@color/activeButtonCol"
+                android:text="@string/q"
+                android:textSize="@dimen/keyFontSize"
                 tools:ignore="TouchTargetSizeCheck" />
 
         </TableRow>
@@ -49,7 +141,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/WelcomeGame" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

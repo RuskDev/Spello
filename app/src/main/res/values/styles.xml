@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="keyButton" parent="android:Widget.Button">
+        <item name="android:inset">0dp</item>
+        <item name="backgroundTint">@color/activeButtonCol</item>
+    </style>
+
+    
+</resources>
