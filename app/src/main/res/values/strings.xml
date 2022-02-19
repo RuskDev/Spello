@@ -3,4 +3,13 @@
     <string name="welcome">Welcome To Spello</string>
     <string name="play">Play</string>
     <string name="q">Q</string>
+    <string name="w">W</string>
+    <string name="e">E</string>
+    <string name="r">R</string>
+    <string name="t">T</string>
+    <string name="y">Y</string>
+    <string name="u">U</string>
+    <string name="i">I</string>
+    <string name="o">O</string>
+    <string name="p">P</string>
 </resources>

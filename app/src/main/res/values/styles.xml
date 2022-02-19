@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="keyButton" parent="android:Widget.Button">
         <item name="android:inset">0dp</item>
         <item name="backgroundTint">@color/activeButtonCol</item>
+        <item name="android:layout_width">@dimen/keyWidth</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">2dp</item>
+        <item name="android:textSize">@dimen/keyFontSize</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     
