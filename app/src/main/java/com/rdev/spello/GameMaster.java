@@ -16,6 +16,7 @@ public class GameMaster {
 
     public void keyPressed(String let){
         wordGuess.add(let);
+        updateView();
     }
 
     public void updateView(){
