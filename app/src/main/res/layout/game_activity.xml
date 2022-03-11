@@ -164,6 +164,14 @@
             android:gravity="center_horizontal">
 
             <Button
+                android:id="@+id/bacKKey"
+                style="@style/keyButton"
+                android:layout_width="14dp"
+                android:layout_weight="2"
+                android:text="@string/backKey"
+                tools:ignore="SmallSp,TouchTargetSizeCheck" />
+
+            <Button
                 android:id="@+id/zKey"
                 style="@style/keyButton"
                 android:text="@string/z"
@@ -205,6 +213,14 @@
                 android:text="@string/m"
                 tools:ignore="SmallSp,TouchTargetSizeCheck" />
 
+            <Button
+                android:id="@+id/enterKey"
+                style="@style/keyButton"
+                android:layout_width="19dp"
+                android:layout_weight="2"
+                android:text="@string/enter"
+                tools:ignore="SmallSp,TouchTargetSizeCheck" />
+
 
         </TableRow>
 
@@ -227,29 +243,24 @@
             android:gravity="center_horizontal">
 
             <TextView
-                android:id="@+id/letter1A"
-                style="@style/letterSpace"
-                android:text="A" />
+                android:id="@+id/letterA1"
+                style="@style/letterSpace"/>
 
             <TextView
-                android:id="@+id/letter1B"
-                style="@style/letterSpace"
-                android:text="A" />
+                android:id="@+id/letterA2"
+                style="@style/letterSpace" />
 
             <TextView
-                android:id="@+id/letter1C"
-                style="@style/letterSpace"
-                android:text="A" />
+                android:id="@+id/letterA3"
+                style="@style/letterSpace" />
 
             <TextView
-                android:id="@+id/letter1D"
-                style="@style/letterSpace"
-                android:text="A" />
+                android:id="@+id/letterA4"
+                style="@style/letterSpace" />
 
             <TextView
-                android:id="@+id/letter1E"
-                style="@style/letterSpace"
-                android:text="A" />
+                android:id="@+id/letterA5"
+                style="@style/letterSpace" />
         </TableRow>
 
     </TableLayout>

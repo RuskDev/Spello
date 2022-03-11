@@ -3,8 +3,11 @@ package com.rdev.spello;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,39 +39,63 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private Button vKey;
     private Button nKey;
     private Button mKey;
+    private Button backKey;
+    private Button enterKey;
+
+    private TextView a1;
+    private TextView a2;
+    private TextView a3;
+    private TextView a4;
+    private TextView a5;
+
+    private ArrayList<TextView> letters = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
-//        gameMaster = new GameMaster(findViewById(R.id.textTemp));
+        gameMaster = new GameMaster(this);
 
-        qKey = findViewById(R.id.qKey);
-        wKey = findViewById(R.id.wKey);
-        eKey = findViewById(R.id.eKey);
-        rKey = findViewById(R.id.rKey);
-        tKey = findViewById(R.id.tKey);
-        yKey = findViewById(R.id.yKey);
-        uKey = findViewById(R.id.uKey);
-        iKey = findViewById(R.id.iKey);
-        oKey = findViewById(R.id.oKey);
-        pKey = findViewById(R.id.pKey);
-        aKey = findViewById(R.id.aKey);
-        sKey = findViewById(R.id.sKey);
-        dKey = findViewById(R.id.dKey);
-        fKey = findViewById(R.id.fKey);
-        gKey = findViewById(R.id.gKey);
-        hKey = findViewById(R.id.hKey);
-        jKey = findViewById(R.id.jKey);
-        kKey = findViewById(R.id.kKey);
-        lKey = findViewById(R.id.lKey);
-        zKey = findViewById(R.id.zKey);
-        xKey = findViewById(R.id.xKey);
-        cKey = findViewById(R.id.cKey);
-        vKey = findViewById(R.id.vKey);
-        bKey = findViewById(R.id.bKey);
-        nKey = findViewById(R.id.nKey);
-        mKey = findViewById(R.id.mKey);
+        qKey = (Button) findViewById(R.id.qKey);
+        wKey = (Button) findViewById(R.id.wKey);
+        eKey = (Button) findViewById(R.id.eKey);
+        rKey = (Button) findViewById(R.id.rKey);
+        tKey = (Button) findViewById(R.id.tKey);
+        yKey = (Button) findViewById(R.id.yKey);
+        uKey = (Button) findViewById(R.id.uKey);
+        iKey = (Button) findViewById(R.id.iKey);
+        oKey = (Button) findViewById(R.id.oKey);
+        pKey = (Button) findViewById(R.id.pKey);
+        aKey = (Button) findViewById(R.id.aKey);
+        sKey = (Button) findViewById(R.id.sKey);
+        dKey = (Button) findViewById(R.id.dKey);
+        fKey = (Button) findViewById(R.id.fKey);
+        gKey = (Button) findViewById(R.id.gKey);
+        hKey = (Button) findViewById(R.id.hKey);
+        jKey = (Button) findViewById(R.id.jKey);
+        kKey = (Button) findViewById(R.id.kKey);
+        lKey = (Button) findViewById(R.id.lKey);
+        zKey = (Button) findViewById(R.id.zKey);
+        xKey = (Button) findViewById(R.id.xKey);
+        cKey = (Button) findViewById(R.id.cKey);
+        vKey = (Button) findViewById(R.id.vKey);
+        bKey = (Button) findViewById(R.id.bKey);
+        nKey = (Button) findViewById(R.id.nKey);
+        mKey = (Button) findViewById(R.id.mKey);
+        backKey = (Button) findViewById(R.id.bacKKey);
+        enterKey = (Button) findViewById(R.id.enterKey);
+
+        a1 = findViewById(R.id.letterA1);
+        a2 = findViewById(R.id.letterA2);
+        a3 = findViewById(R.id.letterA3);
+        a4 = findViewById(R.id.letterA4);
+        a5 = findViewById(R.id.letterA5);
+
+        letters.add(a1);
+        letters.add(a2);
+        letters.add(a3);
+        letters.add(a4);
+        letters.add(a5);
 
 
         setClickListeners();
@@ -101,11 +128,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         bKey.setOnClickListener(this);
         nKey.setOnClickListener(this);
         mKey.setOnClickListener(this);
+        backKey.setOnClickListener(this);
+        enterKey.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         Button buttonPressed = (Button) view;
         gameMaster.keyPressed((String) buttonPressed.getText());
+    }
+
+    public void setLetter(int pos, String l){
+        letters.get(pos).setText(l);
     }
 }

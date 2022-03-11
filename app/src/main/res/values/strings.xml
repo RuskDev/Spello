@@ -28,4 +28,6 @@
     <string name="d">D</string>
     <string name="s">S</string>
     <string name="a">A</string>
+    <string name="backKey"><![CDATA[<-]]></string>
+    <string name="enter">Enter</string>
 </resources>
