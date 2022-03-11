@@ -11,15 +11,31 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private GameMaster gameMaster;
 
     private Button qKey;
-    Button wKey;
-    Button eKey;
-    Button rKey;
-    Button tKey;
-    Button yKey;
-    Button uKey;
-    Button iKey;
-    Button oKey;
-    Button pKey;
+    private Button wKey;
+    private Button eKey;
+    private Button rKey;
+    private Button tKey;
+    private Button yKey;
+    private Button uKey;
+    private Button iKey;
+    private Button oKey;
+    private Button pKey;
+    private Button aKey;
+    private Button dKey;
+    private Button sKey;
+    private Button fKey;
+    private Button gKey;
+    private Button hKey;
+    private Button jKey;
+    private Button kKey;
+    private Button lKey;
+    private Button zKey;
+    private Button xKey;
+    private Button cKey;
+    private Button bKey;
+    private Button vKey;
+    private Button nKey;
+    private Button mKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +53,22 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         iKey = (Button) findViewById(R.id.iKey);
         oKey = (Button) findViewById(R.id.oKey);
         pKey = (Button) findViewById(R.id.pKey);
+        aKey = (Button) findViewById(R.id.aKey);
+        sKey = (Button) findViewById(R.id.sKey);
+        dKey = (Button) findViewById(R.id.dKey);
+        fKey = (Button) findViewById(R.id.fKey);
+        gKey = (Button) findViewById(R.id.gKey);
+        hKey = (Button) findViewById(R.id.hKey);
+        jKey = (Button) findViewById(R.id.jKey);
+        kKey = (Button) findViewById(R.id.kKey);
+        lKey = (Button) findViewById(R.id.lKey);
+        zKey = (Button) findViewById(R.id.zKey);
+        xKey = (Button) findViewById(R.id.xKey);
+        cKey = (Button) findViewById(R.id.cKey);
+        vKey = (Button) findViewById(R.id.vKey);
+        bKey = (Button) findViewById(R.id.bKey);
+        nKey = (Button) findViewById(R.id.nKey);
+        mKey = (Button) findViewById(R.id.mKey);
 
 
         setClickListeners();
@@ -53,33 +85,27 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         iKey.setOnClickListener(this);
         oKey.setOnClickListener(this);
         pKey.setOnClickListener(this);
+        aKey.setOnClickListener(this);
+        sKey.setOnClickListener(this);
+        dKey.setOnClickListener(this);
+        fKey.setOnClickListener(this);
+        gKey.setOnClickListener(this);
+        hKey.setOnClickListener(this);
+        jKey.setOnClickListener(this);
+        kKey.setOnClickListener(this);
+        lKey.setOnClickListener(this);
+        zKey.setOnClickListener(this);
+        xKey.setOnClickListener(this);
+        cKey.setOnClickListener(this);
+        vKey.setOnClickListener(this);
+        bKey.setOnClickListener(this);
+        nKey.setOnClickListener(this);
+        mKey.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (qKey.equals(view)) {
-            gameMaster.keyPressed("Q");
-        } else if (wKey.equals(view)) {
-            gameMaster.keyPressed("W");
-        } else if (eKey.equals(view)) {
-            gameMaster.keyPressed("E");
-        } else if (rKey.equals(view)) {
-            gameMaster.keyPressed("R");
-        } else if (tKey.equals(view)) {
-            gameMaster.keyPressed("T");
-        } else if (yKey.equals(view)) {
-            gameMaster.keyPressed("Y");
-        } else if (uKey.equals(view)) {
-            gameMaster.keyPressed("U");
-        } else if (iKey.equals(view)){
-            gameMaster.keyPressed("I");
-        } else if (oKey.equals(view)){
-            gameMaster.keyPressed("O");
-        } else if (pKey.equals(view)){
-            gameMaster.keyPressed("P");
-        }
-        else {
-            throw new IllegalStateException("Unexpected value: " + view);
-        }
+        Button buttonPressed = (Button) view;
+        gameMaster.keyPressed((String) buttonPressed.getText());
     }
 }
