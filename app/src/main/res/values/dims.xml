@@ -4,5 +4,9 @@
     <dimen name="keyWidth">34dp</dimen>
     <dimen name="keyPad">2dp</dimen>
     <dimen name="keyFontSize">8sp</dimen>
+    <dimen name="letterFontSize">30sp</dimen>
+    <dimen name="letterWidth">65dp</dimen>
+    <dimen name="letterHeight">65dp</dimen>
+    <dimen name="letterMargin">4dp</dimen>
 
 </resources>

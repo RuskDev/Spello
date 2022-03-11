@@ -7,5 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="activeButtonCol">#878787</color>
+    <color name="activeButtonCol">#575757</color>
+    <color name="unselectedLetter">#575757</color>
+    <color name="wrongLetter">#262626</color>
+    <color name="rightLetter">#36d600</color>
+    <color name="wrongPlace">#fc8c03</color>
+    <color name="gameBackgroundColor">#1E1E1E</color>
 </resources>

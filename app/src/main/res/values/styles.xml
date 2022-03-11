@@ -10,5 +10,16 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="letterSpace" parent="android:Widget.TextView">
+        <item name="android:background">@color/unselectedLetter</item>
+        <item name="android:layout_width">@dimen/letterHeight</item>
+        <item name="android:layout_height">@dimen/letterHeight</item>
+        <item name="android:textSize">@dimen/letterFontSize</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/letterMargin</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     
 </resources>

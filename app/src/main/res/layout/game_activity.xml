@@ -3,21 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gameBackgroundColor">
 
     <TextView
         android:id="@+id/WelcomeGame"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to the game screen, this will be a game soon"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintBottom_toTopOf="@+id/lettersTableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintVertical_bias="0.763" />
 
     <TableLayout
-        android:id="@+id/tableLayout"
+        android:id="@+id/keysTableLayout"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:stretchColumns="*"
@@ -208,15 +210,48 @@
 
     </TableLayout>
 
-    <TextView
-        android:id="@+id/textTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+    <TableLayout
+        android:id="@+id/lettersTableLayout"
+        android:layout_width="0dp"
+        android:layout_height="179dp"
+        android:layout_marginBottom="228dp"
+        app:layout_constraintBottom_toTopOf="@+id/keysTableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WelcomeGame" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.805">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/letter1A"
+                style="@style/letterSpace"
+                android:text="A" />
+
+            <TextView
+                android:id="@+id/letter1B"
+                style="@style/letterSpace"
+                android:text="A" />
+
+            <TextView
+                android:id="@+id/letter1C"
+                style="@style/letterSpace"
+                android:text="A" />
+
+            <TextView
+                android:id="@+id/letter1D"
+                style="@style/letterSpace"
+                android:text="A" />
+
+            <TextView
+                android:id="@+id/letter1E"
+                style="@style/letterSpace"
+                android:text="A" />
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
