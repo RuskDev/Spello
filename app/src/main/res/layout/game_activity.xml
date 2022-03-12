@@ -229,13 +229,12 @@
     <TableLayout
         android:id="@+id/lettersTableLayout"
         android:layout_width="0dp"
-        android:layout_height="179dp"
-        android:layout_marginBottom="228dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/keysTableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.805">
+        app:layout_constraintVertical_bias="0.51">
 
         <TableRow
             android:layout_width="match_parent"
@@ -244,7 +243,7 @@
 
             <TextView
                 android:id="@+id/letterA1"
-                style="@style/letterSpace"/>
+                style="@style/letterSpace" />
 
             <TextView
                 android:id="@+id/letterA2"
@@ -260,6 +259,110 @@
 
             <TextView
                 android:id="@+id/letterA5"
+                style="@style/letterSpace" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/letterB1"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterB2"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterB3"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterB4"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterB5"
+                style="@style/letterSpace" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/letterC1"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterC2"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterC3"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterC4"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterC5"
+                style="@style/letterSpace" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/letterD1"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterD2"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterD3"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterD4"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterD5"
+                style="@style/letterSpace" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/letterE1"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterE2"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterE3"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterE4"
+                style="@style/letterSpace" />
+
+            <TextView
+                android:id="@+id/letterE5"
                 style="@style/letterSpace" />
         </TableRow>
 
