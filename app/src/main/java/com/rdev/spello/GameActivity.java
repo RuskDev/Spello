@@ -1,5 +1,6 @@
 package com.rdev.spello;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -140,5 +141,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     public void setLetter(int pos, String l){
         letters.get(pos).setText(l);
+    }
+
+    public void colorLetter(int pos, int type){
+        if (type == 0){
+            letters.get(pos).setBackgroundColor(getResources().getColor(R.color.wrongLetter));
+        } else if (type == 1){
+            letters.get(pos).setBackgroundColor(getResources().getColor(R.color.wrongPlace));
+        } else if (type == 2){
+            letters.get(pos).setBackgroundColor(getResources().getColor(R.color.rightLetter));
+        }
     }
 }
