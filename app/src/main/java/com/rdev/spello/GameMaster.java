@@ -1,8 +1,5 @@
 package com.rdev.spello;
 
-import android.view.View;
-import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -13,7 +10,7 @@ public class GameMaster {
     GameActivity gameActivity;
     int letter = 0;
     int correct = 0;
-    boolean winner = false;
+    boolean gameOver = false;
 
     public GameMaster(GameActivity gameActivity) {
         this.gameActivity = gameActivity;
@@ -25,7 +22,7 @@ public class GameMaster {
     }
 
     public void keyPressed(String let){
-        if (!winner) {
+        if (!gameOver) {
             if (let.length() == 1) {
                 if (letter < 5) {
                     wordGuess.set(letter, let);
@@ -57,7 +54,8 @@ public class GameMaster {
                 }
             }
             if (correct == 5){
-                winner = true;
+                gameOver = true;
+                endGame();
             }
             row++;
             correct = 0;
@@ -86,6 +84,10 @@ public class GameMaster {
                 answer.set(i, splitWord[i + 1]);
             }
         }
+    }
+
+    public void endGame(){
+        gameActivity.showEnd();
     }
 
 }

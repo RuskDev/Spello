@@ -1,9 +1,14 @@
 package com.rdev.spello;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -211,5 +216,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         } else if (type == 2){
             letters.get(pos).setBackgroundColor(getResources().getColor(R.color.rightLetter));
         }
+    }
+
+    public void showEnd(){
+         startActivity(new Intent(GameActivity.this, popUpActivity.class));
     }
 }
