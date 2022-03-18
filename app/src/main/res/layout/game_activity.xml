@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/gameBackgroundColor">
 
-    <TextView
-        android:id="@+id/WelcomeGame"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to the game screen, this will be a game soon"
-        app:layout_constraintBottom_toTopOf="@+id/lettersTableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
-
     <TableLayout
         android:id="@+id/keysTableLayout"
         android:layout_width="409dp"
@@ -79,7 +67,7 @@
                 android:id="@+id/iKey"
                 style="@style/keyButton"
                 android:text="@string/i"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
+                tools:ignore="SmallSp,TouchTargetSizeCheck,TextContrastCheck" />
 
             <Button
                 android:id="@+id/oKey"
@@ -367,5 +355,16 @@
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/gameBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="<"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
