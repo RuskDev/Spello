@@ -201,6 +201,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if (view != backButton) {
             Button buttonPressed = (Button) view;
             gameMaster.keyPressed((String) buttonPressed.getText());
+        } else {
+            Intent homeScreen = new Intent(this, MainActivity.class);
+            startActivity(homeScreen);
         }
     }
 
