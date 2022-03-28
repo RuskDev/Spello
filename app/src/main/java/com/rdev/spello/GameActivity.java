@@ -42,6 +42,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private Button mKey;
     private Button backKey;
     private Button enterKey;
+    private Button backButton;
 
     private TextView a1;
     private TextView a2;
@@ -105,6 +106,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mKey = (Button) findViewById(R.id.mKey);
         backKey = (Button) findViewById(R.id.bacKKey);
         enterKey = (Button) findViewById(R.id.enterKey);
+        backButton = (Button) findViewById(R.id.gameBackButton);
 
         a1 = findViewById(R.id.letterA1);
         a2 = findViewById(R.id.letterA2);
@@ -191,12 +193,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mKey.setOnClickListener(this);
         backKey.setOnClickListener(this);
         enterKey.setOnClickListener(this);
+        backButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        Button buttonPressed = (Button) view;
-        gameMaster.keyPressed((String) buttonPressed.getText());
+        if (view != backButton) {
+            Button buttonPressed = (Button) view;
+            gameMaster.keyPressed((String) buttonPressed.getText());
+        }
     }
 
     public void setLetter(int pos, String l){

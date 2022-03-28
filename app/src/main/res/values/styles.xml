@@ -29,7 +29,11 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
-    
+
+    <style name="backButton" parent="android:Widget.Button">
+        <item name="backgroundTint">@color/activeButtonCol</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
 
     

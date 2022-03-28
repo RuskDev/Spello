@@ -358,11 +358,12 @@
 
     <Button
         android:id="@+id/gameBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/backButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="<"
+        android:text="@string/back"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
