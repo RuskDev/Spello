@@ -26,7 +26,7 @@ public class WordLibrary {
                 String line;
                 while ((line = br.readLine()) != null) {
                     String[] splitLine = line.split("\t");
-                    if (splitLine.length == 2) {
+                    if (splitLine.length == 2 & splitLine[0].length() == 5) {
                         words.put(splitLine[0], new WordResponse(splitLine[0], splitLine[1]));
                     }
                 }
