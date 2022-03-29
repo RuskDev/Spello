@@ -1,14 +1,21 @@
 package com.rdev.spello.Utils;
 
+import android.content.Context;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class WordLibrary {
+    Context context;
+
+    public WordLibrary(Context context) {
+        this.context = context;
+        getWords();
+    }
 
     /**
      * A static variable to store all words in memory
@@ -19,9 +26,9 @@ public class WordLibrary {
     /**
      * Process the words file when the class is loaded, and fill a static Map
      */
-    static {
+    private void getWords() {
         try {
-            InputStream resourceStream = WordLibrary.class.getResourceAsStream("/Scrabble/Utils/collins_scrabble_words_2019.txt");
+            InputStream resourceStream = context.getAssets().open("collins_scrabble_words_2019.txt");
             try (BufferedReader br = new BufferedReader(new InputStreamReader(resourceStream))) {
                 String line;
                 while ((line = br.readLine()) != null) {
@@ -31,8 +38,7 @@ public class WordLibrary {
                     }
                 }
             }
-        }
-        catch(IOException exception){
+        } catch (IOException exception) {
             System.out.println("Could not load scrabble words: " + exception.getMessage());
             exception.printStackTrace();
         }

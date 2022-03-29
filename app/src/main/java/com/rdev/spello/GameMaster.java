@@ -1,24 +1,37 @@
 package com.rdev.spello;
 
+import android.content.Context;
+
+import com.rdev.spello.Utils.WordLibrary;
+import com.rdev.spello.Utils.WordResponse;
+
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class GameMaster {
-    ArrayList<String> wordGuess = new ArrayList<>();
-    ArrayList<String> answer = new ArrayList<>();
-    int row = 0;
-    GameActivity gameActivity;
-    int letter = 0;
-    int correct = 0;
-    boolean gameOver = false;
+    private Context context;
+    private ArrayList<String> wordGuess = new ArrayList<>();
+    private ArrayList<String> answer = new ArrayList<>();
+    private WordLibrary wordLibrary;
+    private GameActivity gameActivity;
+    private WordResponse wordResponse;
 
-    public GameMaster(GameActivity gameActivity) {
+    private int row = 0;
+    private int letter = 0;
+    private int correct = 0;
+    private boolean gameOver = false;
+
+    public GameMaster(GameActivity gameActivity, Context context) {
+        this.context = context;
+        wordLibrary = new WordLibrary(context);
         this.gameActivity = gameActivity;
         for (int i = 0; i < 5; i++){
             wordGuess.add("");
             answer.add("");
         }
-        setAnswer("teams");
+        wordResponse = wordLibrary.getRandomWord();
+        setAnswer(wordResponse.getWord());
     }
 
     public void keyPressed(String let){

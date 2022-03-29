@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.rdev.spello.Utils.WordLibrary;
+
 import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -76,7 +78,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
-        gameMaster = new GameMaster(this);
+        gameMaster = new GameMaster(this, getApplicationContext());
 
         qKey = (Button) findViewById(R.id.qKey);
         wKey = (Button) findViewById(R.id.wKey);
