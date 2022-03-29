@@ -30,6 +30,7 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
         exitButton.setOnClickListener(this);
     }
 
+    //Todo Add definition of word
 
     @Override
     public void onClick(View view) {

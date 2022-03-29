@@ -209,6 +209,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //Todo make letter buttons change colour
+
     public void setLetter(int pos, String l){
         letters.get(pos).setText(l);
     }
