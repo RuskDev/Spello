@@ -11,10 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.rdev.spello.Utils.WordLibrary;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Locale;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
 
     private GameMaster gameMaster;
+
+    private HashMap<String, Button> buttons = new HashMap<>();
 
     private Button qKey;
     private Button wKey;
@@ -110,6 +114,34 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         enterKey = (Button) findViewById(R.id.enterKey);
         backButton = (Button) findViewById(R.id.gameBackButton);
 
+        buttons.put("Q", qKey);
+        buttons.put("W", wKey);
+        buttons.put("E", eKey);
+        buttons.put("R", rKey);
+        buttons.put("T", tKey);
+        buttons.put("Y", yKey);
+        buttons.put("U", uKey);
+        buttons.put("I", iKey);
+        buttons.put("O", oKey);
+        buttons.put("P", pKey);
+        buttons.put("A", aKey);
+        buttons.put("S", sKey);
+        buttons.put("D", dKey);
+        buttons.put("F", fKey);
+        buttons.put("G", gKey);
+        buttons.put("H", hKey);
+        buttons.put("J", jKey);
+        buttons.put("K", kKey);
+        buttons.put("L", lKey);
+        buttons.put("Z", zKey);
+        buttons.put("X", xKey);
+        buttons.put("C", cKey);
+        buttons.put("V", vKey);
+        buttons.put("B", bKey);
+        buttons.put("N", nKey);
+        buttons.put("M", mKey);
+
+
         a1 = findViewById(R.id.letterA1);
         a2 = findViewById(R.id.letterA2);
         a3 = findViewById(R.id.letterA3);
@@ -202,14 +234,24 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view != backButton) {
             Button buttonPressed = (Button) view;
-            gameMaster.keyPressed((String) buttonPressed.getText());
+            gameMaster.keyPressed( (String) buttonPressed.getText());
         } else {
             Intent homeScreen = new Intent(this, MainActivity.class);
             startActivity(homeScreen);
         }
     }
 
-    //Todo make letter buttons change colour
+    //Todo make letter buttons change color
+    public void colorKeyButton(String letter, int type){
+        Button button = buttons.get(letter.toUpperCase(Locale.ROOT));
+        if (type == 0){
+            button.setBackgroundColor(getResources().getColor(R.color.wrongLetter));
+        } else if (type == 1){
+            button.setBackgroundColor(getResources().getColor(R.color.wrongPlace));
+        } else if (type == 2){
+            button.setBackgroundColor(getResources().getColor(R.color.rightLetter));
+        }
+    }
 
     public void setLetter(int pos, String l){
         letters.get(pos).setText(l);

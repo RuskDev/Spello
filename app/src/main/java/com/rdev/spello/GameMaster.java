@@ -59,11 +59,14 @@ public class GameMaster {
             for (int i = 0; i < 5; i++){
                 if (answer.get(i).equals(wordGuess.get(i))){
                     gameActivity.colorLetter((row * 5) + i, 2);
+                    gameActivity.colorKeyButton(wordGuess.get(i), 2);
                     correct++;
                 } else if (answer.contains(wordGuess.get(i))){
                     gameActivity.colorLetter((row * 5) + i, 1);
+                    gameActivity.colorKeyButton(wordGuess.get(i), 1);
                 } else {
                     gameActivity.colorLetter((row * 5) + i, 0);
+                    gameActivity.colorKeyButton(wordGuess.get(i), 0);
                 }
             }
             if (correct == 5){
