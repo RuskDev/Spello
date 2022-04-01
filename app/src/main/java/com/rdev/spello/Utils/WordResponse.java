@@ -1,6 +1,8 @@
 package com.rdev.spello.Utils;
 
-public class WordResponse {
+import java.io.Serializable;
+
+public class WordResponse implements Serializable {
     private String word;
     private String definition;
 

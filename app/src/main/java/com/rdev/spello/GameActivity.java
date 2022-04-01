@@ -3,14 +3,16 @@ package com.rdev.spello;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.rdev.spello.Utils.WordLibrary;
+import com.rdev.spello.Utils.WordResponse;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
@@ -20,6 +22,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private GameMaster gameMaster;
 
     private HashMap<String, Button> buttons = new HashMap<>();
+
+    TextView showWordView;
 
     private Button qKey;
     private Button wKey;
@@ -83,6 +87,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
+        showWordView = (TextView) findViewById(R.id.showWord);
         gameMaster = new GameMaster(this, getApplicationContext());
 
         qKey = (Button) findViewById(R.id.qKey);
@@ -169,6 +174,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         e4 = findViewById(R.id.letterE4);
         e5 = findViewById(R.id.letterE5);
 
+
         letters.add(a1);
         letters.add(a2);
         letters.add(a3);
@@ -242,6 +248,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    //Todo fix final word bug
+
     @SuppressLint("UseCompatLoadingForColorStateLists")
     public void colorKeyButton(String letter, int type){
         Button button = buttons.get(letter.toUpperCase(Locale.ROOT));
@@ -268,7 +276,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void showEnd(){
-         startActivity(new Intent(GameActivity.this, PopUpActivity.class));
+    public void showMe(String word){
+        showWordView.setText(word);
+    }
+
+    public void showEnd(WordResponse wordResponse){
+        Intent i = new Intent(GameActivity.this, PopUpActivity.class);
+        i.putExtra("word", (Serializable) wordResponse);
+         startActivity(i);
     }
 }

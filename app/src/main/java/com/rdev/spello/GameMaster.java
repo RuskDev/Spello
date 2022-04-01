@@ -32,6 +32,7 @@ public class GameMaster {
         }
         wordResponse = wordLibrary.getRandomWord();
         setAnswer(wordResponse.getWord());
+        gameActivity.showMe(wordResponse.getWord());
     }
 
     public void keyPressed(String let){
@@ -103,7 +104,14 @@ public class GameMaster {
     }
 
     public void endGame(){
-        gameActivity.showEnd();
+        gameActivity.showEnd(wordResponse);
     }
 
+    public String getWord(){
+        return wordResponse.getWord();
+    }
+
+    public String getDef(){
+        return wordResponse.getDefinition();
+    }
 }
