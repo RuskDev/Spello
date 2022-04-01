@@ -242,7 +242,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    //Todo make letter buttons change color
     @SuppressLint("UseCompatLoadingForColorStateLists")
     public void colorKeyButton(String letter, int type){
         Button button = buttons.get(letter.toUpperCase(Locale.ROOT));
