@@ -1,5 +1,6 @@
 package com.rdev.spello;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -242,14 +243,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //Todo make letter buttons change color
+    @SuppressLint("UseCompatLoadingForColorStateLists")
     public void colorKeyButton(String letter, int type){
         Button button = buttons.get(letter.toUpperCase(Locale.ROOT));
         if (type == 0){
-            button.setBackgroundColor(getResources().getColor(R.color.wrongLetter));
+            button.setBackgroundTintList(this.getResources().getColorStateList(R.color.wrongLetter));
         } else if (type == 1){
-            button.setBackgroundColor(getResources().getColor(R.color.wrongPlace));
+            button.setBackgroundTintList(this.getResources().getColorStateList(R.color.wrongPlace));
         } else if (type == 2){
-            button.setBackgroundColor(getResources().getColor(R.color.rightLetter));
+            button.setBackgroundTintList(this.getResources().getColorStateList(R.color.rightLetter));
         }
     }
 

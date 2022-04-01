@@ -6,224 +6,28 @@
     android:layout_height="match_parent"
     android:background="@color/gameBackgroundColor">
 
-    <TableLayout
-        android:id="@+id/keysTableLayout"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:stretchColumns="*"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/qKey"
-                style="@style/keyButton"
-                android:text="@string/q"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/wKey"
-                style="@style/keyButton"
-                android:text="@string/w"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/eKey"
-                style="@style/keyButton"
-                android:text="@string/e"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/rKey"
-                style="@style/keyButton"
-                android:text="@string/r"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/tKey"
-                style="@style/keyButton"
-                android:text="@string/t"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/yKey"
-                style="@style/keyButton"
-                android:text="@string/y"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/uKey"
-                style="@style/keyButton"
-                android:text="@string/u"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/iKey"
-                style="@style/keyButton"
-                android:text="@string/i"
-                tools:ignore="SmallSp,TouchTargetSizeCheck,TextContrastCheck" />
-
-            <Button
-                android:id="@+id/oKey"
-                style="@style/keyButton"
-                android:text="@string/o"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/pKey"
-                style="@style/keyButton"
-                android:text="@string/p"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/aKey"
-                style="@style/keyButton"
-                android:text="@string/a"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/sKey"
-                style="@style/keyButton"
-                android:text="@string/s"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/dKey"
-                style="@style/keyButton"
-                android:text="@string/d"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/fKey"
-                style="@style/keyButton"
-                android:text="@string/f"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/gKey"
-                style="@style/keyButton"
-                android:text="@string/g"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/hKey"
-                style="@style/keyButton"
-                android:text="@string/h"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/jKey"
-                style="@style/keyButton"
-                android:text="@string/j"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/kKey"
-                style="@style/keyButton"
-                android:text="@string/k"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/lKey"
-                style="@style/keyButton"
-                android:text="@string/l"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/bacKKey"
-                style="@style/keyButton"
-                android:layout_width="14dp"
-                android:layout_weight="2"
-                android:text="@string/backKey"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/zKey"
-                style="@style/keyButton"
-                android:text="@string/z"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/xKey"
-                style="@style/keyButton"
-                android:text="@string/x"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/cKey"
-                style="@style/keyButton"
-                android:text="@string/c"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/vKey"
-                style="@style/keyButton"
-                android:text="@string/v"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/bKey"
-                style="@style/keyButton"
-                android:text="@string/b"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/nKey"
-                style="@style/keyButton"
-                android:text="@string/n"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/mKey"
-                style="@style/keyButton"
-                android:text="@string/m"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-            <Button
-                android:id="@+id/enterKey"
-                style="@style/keyButton"
-                android:layout_width="19dp"
-                android:layout_weight="2"
-                android:text="@string/enter"
-                tools:ignore="SmallSp,TouchTargetSizeCheck" />
-
-
-        </TableRow>
-
-    </TableLayout>
+    <Button
+        android:id="@+id/gameBackButton"
+        style="@style/backButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/back"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/lettersTableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
 
     <TableLayout
         android:id="@+id/lettersTableLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/keysTableLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
@@ -357,18 +161,210 @@
 
     </TableLayout>
 
-    <Button
-        android:id="@+id/gameBackButton"
-        style="@style/backButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/back"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/lettersTableLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/qKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/q" />
+
+            <Button
+                android:id="@+id/wKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/w" />
+
+            <Button
+                android:id="@+id/eKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/e" />
+
+            <Button
+                android:id="@+id/rKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/r" />
+
+            <Button
+                android:id="@+id/tKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/t" />
+
+            <Button
+                android:id="@+id/yKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/y" />
+
+            <Button
+                android:id="@+id/uKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/u" />
+
+            <Button
+                android:id="@+id/iKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/i" />
+
+            <Button
+                android:id="@+id/oKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/o" />
+
+            <Button
+                android:id="@+id/pKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/p" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/aKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/a" />
+
+            <Button
+                android:id="@+id/sKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/s" />
+
+            <Button
+                android:id="@+id/dKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/d" />
+
+            <Button
+                android:id="@+id/fKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/f"
+                tools:ignore="SmallSp,TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/gKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/g" />
+
+            <Button
+                android:id="@+id/hKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/h" />
+
+            <Button
+                android:id="@+id/jKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/j" />
+
+            <Button
+                android:id="@+id/kKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/k" />
+
+            <Button
+                android:id="@+id/lKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/l" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bacKKey"
+                style="@style/keyButton"
+                android:layout_width="14dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/backKey" />
+
+            <Button
+                android:id="@+id/zKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/z" />
+
+            <Button
+                android:id="@+id/xKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/x" />
+
+            <Button
+                android:id="@+id/cKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/c" />
+
+            <Button
+                android:id="@+id/vKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/v"
+                tools:ignore="SmallSp,TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/bKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/b" />
+
+            <Button
+                android:id="@+id/nKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/n" />
+
+            <Button
+                android:id="@+id/mKey"
+                style="@style/keyButton"
+                android:layout_height="wrap_content"
+                android:text="@string/m" />
+
+            <Button
+                android:id="@+id/enterKey"
+                style="@style/keyButton"
+                android:layout_width="19dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/enter"
+                tools:ignore="SmallSp,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

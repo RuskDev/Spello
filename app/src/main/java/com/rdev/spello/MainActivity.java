@@ -2,8 +2,11 @@ package com.rdev.spello;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.location.GnssAntennaInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        Intent gameScreen = new Intent(this, GameActivity.class);
-        startActivity(gameScreen);
+            Intent gameScreen = new Intent(this, GameActivity.class);
+            startActivity(gameScreen);
     }
 }
