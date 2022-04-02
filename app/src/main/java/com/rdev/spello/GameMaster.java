@@ -56,29 +56,38 @@ public class GameMaster {
     }
 
     public void enterPressed(){
+        gameActivity.hideError();
         if (letter == 5 & row < 4){
-            for (int i = 0; i < 5; i++){
-                if (answer.get(i).equals(wordGuess.get(i))){
-                    gameActivity.colorLetter((row * 5) + i, 2);
-                    gameActivity.colorKeyButton(wordGuess.get(i), 2);
-                    correct++;
-                } else if (answer.contains(wordGuess.get(i))){
-                    gameActivity.colorLetter((row * 5) + i, 1);
-                    gameActivity.colorKeyButton(wordGuess.get(i), 1);
-                } else {
-                    gameActivity.colorLetter((row * 5) + i, 0);
-                    gameActivity.colorKeyButton(wordGuess.get(i), 0);
+            String w = "";
+            for (String s : wordGuess){
+                w += s;
+            }
+            if (wordLibrary.isWord(w)) {
+                for (int i = 0; i < 5; i++) {
+                    if (answer.get(i).equals(wordGuess.get(i))) {
+                        gameActivity.colorLetter((row * 5) + i, 2);
+                        gameActivity.colorKeyButton(wordGuess.get(i), 2);
+                        correct++;
+                    } else if (answer.contains(wordGuess.get(i))) {
+                        gameActivity.colorLetter((row * 5) + i, 1);
+                        gameActivity.colorKeyButton(wordGuess.get(i), 1);
+                    } else {
+                        gameActivity.colorLetter((row * 5) + i, 0);
+                        gameActivity.colorKeyButton(wordGuess.get(i), 0);
+                    }
                 }
-            }
-            if (correct == 5){
-                gameOver = true;
-                endGame(true);
-            }
-            row++;
-            correct = 0;
-            letter = 0;
-            for (int i = 0; i < 5; i++){
-                wordGuess.set(i, " ");
+                if (correct == 5) {
+                    gameOver = true;
+                    endGame(true);
+                }
+                row++;
+                correct = 0;
+                letter = 0;
+                for (int i = 0; i < 5; i++) {
+                    wordGuess.set(i, " ");
+                }
+            } else {
+                gameActivity.showError(w);
             }
         } else if (row == 4){
             gameOver = true;

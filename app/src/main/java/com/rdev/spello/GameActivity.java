@@ -81,6 +81,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private TextView e4;
     private TextView e5;
 
+    private TextView error;
+
     private ArrayList<TextView> letters = new ArrayList<>();
 
     @Override
@@ -173,6 +175,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         e3 = findViewById(R.id.letterE3);
         e4 = findViewById(R.id.letterE4);
         e5 = findViewById(R.id.letterE5);
+
+        error = findViewById(R.id.errorView);
 
 
         letters.add(a1);
@@ -285,5 +289,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         i.putExtra("word", (Serializable) wordResponse);
         i.putExtra("Win?", win);
          startActivity(i);
+    }
+
+    public void showError(String word){
+        String s = word;
+        s += " isn't a valid word";
+        error.setText(s);
+
+    }
+    public void hideError(){
+        error.setText("");
     }
 }

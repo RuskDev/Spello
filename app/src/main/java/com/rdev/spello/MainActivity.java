@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Todo actually make the homescreen
 
-    //Todo add ads, etc
-
     @Override
     public void onClick(View view) {
             Intent gameScreen = new Intent(this, GameActivity.class);

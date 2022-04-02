@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class WordLibrary {
@@ -48,5 +49,9 @@ public class WordLibrary {
         String[] keys = words.keySet().toArray(new String[0]);
         int ran = (int) (Math.random() * ( keys.length - 1 ) + 1);
         return  words.get(keys[ran]);
+    }
+
+    public boolean isWord(String word){
+        return words.containsKey(word.toUpperCase(Locale.ROOT));
     }
 }
