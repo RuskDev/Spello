@@ -56,7 +56,7 @@ public class GameMaster {
     }
 
     public void enterPressed(){
-        if (letter == 5){
+        if (letter == 5 & row < 4){
             for (int i = 0; i < 5; i++){
                 if (answer.get(i).equals(wordGuess.get(i))){
                     gameActivity.colorLetter((row * 5) + i, 2);
@@ -72,7 +72,7 @@ public class GameMaster {
             }
             if (correct == 5){
                 gameOver = true;
-                endGame();
+                endGame(true);
             }
             row++;
             correct = 0;
@@ -80,6 +80,9 @@ public class GameMaster {
             for (int i = 0; i < 5; i++){
                 wordGuess.set(i, " ");
             }
+        } else if (row == 4){
+            gameOver = true;
+            endGame(false);
         }
     }
 
@@ -103,8 +106,8 @@ public class GameMaster {
         }
     }
 
-    public void endGame(){
-        gameActivity.showEnd(wordResponse);
+    public void endGame(Boolean win){
+        gameActivity.showEnd(wordResponse, win);
     }
 
     public String getWord(){

@@ -17,6 +17,7 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
     private WordResponse wordResponse;
     private TextView wordText;
     private TextView definitionText;
+    private TextView titleText;
 
 
     @Override
@@ -30,6 +31,8 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
+        boolean win;
+
         getWindow().setLayout((int) (width * 0.8), (int) (height * 0.8));
 
         exitButton = findViewById(R.id.popUpExitButton);
@@ -37,22 +40,38 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
 
         wordText = findViewById(R.id.wordDetails);
         definitionText = findViewById(R.id.definitionText);
+        titleText = findViewById(R.id.titleText);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             WordResponse response =  (WordResponse) extras.get("word");
             wordResponse = response;
+            win = (boolean) extras.get("Win?");
 
-            setWordText(wordResponse.getWord());
             setDefinitionText(wordResponse.getDefinition());
+
+            if (win){
+                setTitle("Congratulations");
+                setWordText(wordResponse.getWord(), true);
+            } else {
+                setTitle("Unlucky");
+                setWordText(wordResponse.getWord(), false);
+            }
 
         }
     }
 
-    //Todo Add definition of word
+    public void setTitle(String word){
+        titleText.setText(word);
+    }
 
-    public void setWordText(String word){
-        String s = "You got the word ";
+    public void setWordText(String word, boolean win){
+        String s;
+        if (win){
+            s = "You got the word ";
+        } else {
+            s = "The word was ";
+        }
         s += word;
         wordText.setText(s);
     }

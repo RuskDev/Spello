@@ -280,9 +280,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         showWordView.setText(word);
     }
 
-    public void showEnd(WordResponse wordResponse){
+    public void showEnd(WordResponse wordResponse, boolean win){
         Intent i = new Intent(GameActivity.this, PopUpActivity.class);
         i.putExtra("word", (Serializable) wordResponse);
+        i.putExtra("Win?", win);
          startActivity(i);
     }
 }
