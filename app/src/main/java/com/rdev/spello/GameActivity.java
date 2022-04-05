@@ -279,7 +279,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    //Todo fix final word bug
 
     @SuppressLint("UseCompatLoadingForColorStateLists")
     public void colorKeyButton(String letter, int type){
@@ -377,19 +376,31 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     public void showAd(){
         if (mRewardedAd != null) {
             Activity activityContext = GameActivity.this;
-            mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-                @Override
-                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                    // Handle the reward.
-                    Log.d(TAG, "The user earned the reward.");
-                    int rewardAmount = rewardItem.getAmount();
-                    String rewardType = rewardItem.getType();
-                }
+            mRewardedAd.show(activityContext, rewardItem -> {
+                // Handle the reward.
+                Log.d(TAG, "The user earned the reward.");
+                int rewardAmount = rewardItem.getAmount();
+                String rewardType = rewardItem.getType();
+                adReward();
             });
         } else {
             Log.d(TAG, "The rewarded ad wasn't ready yet.");
         }
 
+    }
+
+    public void adReward(){
+        int row = gameMaster.getRow();
+        for (int i = 0; i < 20; i++){
+            int ran = (int) (Math.random() * 5 + 1);
+            if (letters.get((5 * row) + ran).getText().equals("")){
+                String[] word = gameMaster.getWord().split("");
+                String letter = word[ran];
+                String s = "Pssst....I heard " + letter + " is letter " + ran;
+                error.setText(s);
+
+            }
+        }
     }
 
 }

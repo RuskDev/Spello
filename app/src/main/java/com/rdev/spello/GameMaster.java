@@ -126,4 +126,12 @@ public class GameMaster {
     public String getDef(){
         return wordResponse.getDefinition();
     }
+
+    public int getRow(){
+        if (row > 0){
+            return row - 1;
+        } else {
+            return row;
+        }
+    }
 }
