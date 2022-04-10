@@ -340,7 +340,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     public void loadAd(){
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917", //ca-app-pub-3940256099942544/5224354917 //ca-app-pub-5629324601829511/5092184584 (Mine)
+        RewardedAd.load(this, "ca-app-pub-5629324601829511/5092184584", //ca-app-pub-3940256099942544/5224354917 //ca-app-pub-5629324601829511/5092184584 (Mine)
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
