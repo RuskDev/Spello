@@ -2,7 +2,9 @@ package com.rdev.spello;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -308,6 +310,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void showEnd(WordResponse wordResponse, boolean win){
+        SharedPreferences prefs = getSharedPreferences("Share", Context.MODE_PRIVATE );
+        SharedPreferences.Editor editor = prefs.edit();
+        if (win){
+            editor.putInt("Correct", prefs.getInt("Correct",0) + 1 );
+            editor.putInt("Streak", prefs.getInt("Streak",0) + 1 );
+        } else {
+            editor.putInt("Streak", 0 );
+        }
+        editor.putInt("Total", prefs.getInt("Total",0) + 1 );
+        editor.commit();
         Intent i = new Intent(GameActivity.this, PopUpActivity.class);
         i.putExtra("word", (Serializable) wordResponse);
         i.putExtra("Win?", win);

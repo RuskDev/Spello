@@ -1,6 +1,8 @@
 package com.rdev.spello;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -19,8 +21,12 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
     private TextView wordText;
     private TextView definitionText;
     private TextView titleText;
+    private TextView statsText;
     private Button whatsappButton;
     private String shareMessage;
+    private int total;
+    private int correct;
+    private int streak;
 
 
     @Override
@@ -36,7 +42,7 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
 
         boolean win;
 
-        getWindow().setLayout((int) (width * 0.8), (int) (height * 0.8));
+        getWindow().setLayout((int) (width * 0.8), (int) (height * 0.85));
 
         exitButton = findViewById(R.id.popUpExitButton);
         exitButton.setOnClickListener(this);
@@ -47,6 +53,7 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
         wordText = findViewById(R.id.wordDetails);
         definitionText = findViewById(R.id.definitionText);
         titleText = findViewById(R.id.titleText);
+        statsText = findViewById(R.id.statsView);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -64,8 +71,20 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
                 setTitle("Unlucky");
                 setWordText(wordResponse.getWord(), false);
             }
-
         }
+
+        SharedPreferences prefs = getSharedPreferences("Share", Context.MODE_PRIVATE );
+        total = prefs.getInt("Total", 0);
+        correct = prefs.getInt("Correct", 0);
+        streak = prefs.getInt("Streak", 0);
+        setStats();
+
+    }
+
+    public void setStats(){
+        int percent = (int) (correct / total) * 100;
+        String s = "Current Streak : " + streak + "\nTotal Games : " + total + "\nWin percentage : " + percent + "%";
+        statsText.setText(s);
     }
 
     public void setTitle(String word){

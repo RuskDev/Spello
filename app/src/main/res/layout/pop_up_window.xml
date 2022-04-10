@@ -15,9 +15,9 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="45dp"
-        android:paddingTop="40dp"
+        android:paddingTop="20dp"
         android:paddingRight="45dp"
-        android:paddingBottom="35dp"
+        android:paddingBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,12 +27,22 @@
             android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/congratulations"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="32sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/statsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/wordDetails"
@@ -65,10 +75,10 @@
         <Button
             android:id="@+id/whatsappButton"
             style="@style/popUpMenuButton"
-            android:text="Share"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="25dp"
+            android:text="Share" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
