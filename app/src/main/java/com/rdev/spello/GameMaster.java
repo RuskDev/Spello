@@ -5,11 +5,12 @@ import android.content.Context;
 import com.rdev.spello.Utils.WordLibrary;
 import com.rdev.spello.Utils.WordResponse;
 
+import java.io.Serializable;
 import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class GameMaster {
+public class GameMaster implements Serializable {
     private Context context;
     private ArrayList<String> wordGuess = new ArrayList<>();
     private ArrayList<String> answer = new ArrayList<>();

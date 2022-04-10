@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,8 +17,6 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.OnUserEarnedRewardListener;
-import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.rdev.spello.Utils.WordResponse;
@@ -314,6 +311,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         Intent i = new Intent(GameActivity.this, PopUpActivity.class);
         i.putExtra("word", (Serializable) wordResponse);
         i.putExtra("Win?", win);
+        i.putExtra("shareMessage",  shareMessage());
          startActivity(i);
     }
 
@@ -401,6 +399,32 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         }
+    }
+
+    private final String orangeSquare = "\uD83D\uDFE7";
+    private final String greenSquare = "\uD83D\uDFE9";
+    private final String blackSquare = "⬛";
+
+    public String shareMessage(){
+        String word = gameMaster.getWord();
+        String[] letter = word.split("");
+        String s = "I got the word. Can you do it better?\n";
+        int i = 0;
+        while (i < 5) {
+            for (int j = 0; j < 5; j++) {
+                String l = (String) letters.get((i*5) + j).getText();
+                if (letter[j].equals(l)){
+                    s += greenSquare;
+                } else if (word.contains(l)){
+                    s += orangeSquare;
+                } else {
+                    s += blackSquare;
+                }
+            }
+            i++;
+            s += "\n";
+        }
+        return  s;
     }
 
 }

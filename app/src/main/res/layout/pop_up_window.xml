@@ -62,5 +62,13 @@
             android:layout_height="wrap_content"
             android:text="@string/exit" />
 
+        <Button
+            android:id="@+id/whatsappButton"
+            style="@style/popUpMenuButton"
+            android:text="Share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

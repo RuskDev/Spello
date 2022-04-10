@@ -6,6 +6,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,8 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
     private TextView wordText;
     private TextView definitionText;
     private TextView titleText;
+    private Button whatsappButton;
+    private String shareMessage;
 
 
     @Override
@@ -38,6 +41,9 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
         exitButton = findViewById(R.id.popUpExitButton);
         exitButton.setOnClickListener(this);
 
+        whatsappButton = findViewById(R.id.whatsappButton);
+        whatsappButton.setOnClickListener(this);
+
         wordText = findViewById(R.id.wordDetails);
         definitionText = findViewById(R.id.definitionText);
         titleText = findViewById(R.id.titleText);
@@ -47,6 +53,7 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
             WordResponse response =  (WordResponse) extras.get("word");
             wordResponse = response;
             win = (boolean) extras.get("Win?");
+            shareMessage = (String) extras.get("shareMessage");
 
             setDefinitionText(wordResponse.getDefinition());
 
@@ -84,6 +91,23 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(PopUpActivity.this, MainActivity.class));
+        if (view == whatsappButton) {
+            shareToWhatsapp();
+        } else {
+            startActivity(new Intent(PopUpActivity.this, MainActivity.class));
+
+        }
+    }
+
+    public void shareToWhatsapp(){
+        Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
+        whatsappIntent.setType("text/plain");
+        whatsappIntent.setPackage("com.whatsapp");
+        whatsappIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+        try {
+            this.startActivity(whatsappIntent);
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "Whatsapp not installed", Toast.LENGTH_SHORT).show();
+        }
     }
 }
