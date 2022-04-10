@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Create an AdView and put it into your FrameLayout
         adView = new AdView(this);
         adContainerView.addView(adView);
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111"); //ca-app-pub-3940256099942544/6300978111 //ca-app-pub-5629324601829511/4793581930 (Mine)
         //start requesting banner ads
         loadBanner();
 
