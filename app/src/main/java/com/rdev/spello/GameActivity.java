@@ -106,7 +106,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
-        showWordView = (TextView) findViewById(R.id.showWord);
+//        showWordView = (TextView) findViewById(R.id.showWord);
         gameMaster = new GameMaster(this, getApplicationContext());
 
         qKey = (Button) findViewById(R.id.qKey);
@@ -305,9 +305,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void showMe(String word){
-        showWordView.setText(word);
-    }
+//    public void showMe(String word){
+//        showWordView.setText(word);
+//    }
 
     public void showEnd(WordResponse wordResponse, boolean win){
         SharedPreferences prefs = getSharedPreferences("Share", Context.MODE_PRIVATE );
@@ -392,6 +392,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 int rewardAmount = rewardItem.getAmount();
                 String rewardType = rewardItem.getType();
                 adReward();
+                loadAd();
             });
         } else {
             Log.d(TAG, "The rewarded ad wasn't ready yet.");
@@ -400,15 +401,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void adReward(){
-        int row = gameMaster.getRow();
+        int row = gameMaster.getRow() ;
         for (int i = 0; i < 20; i++){
-            int ran = (int) (Math.random() * 5 + 1);
+            int ran = (int) (Math.random() * 4 + 1);
             if (letters.get((5 * row) + ran).getText().equals("")){
                 String[] word = gameMaster.getWord().split("");
                 String letter = word[ran];
                 String s = "Pssst....I heard " + letter + " is letter " + ran;
                 error.setText(s);
-
+                break;
             }
         }
     }

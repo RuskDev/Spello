@@ -82,8 +82,9 @@ public class PopUpActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void setStats(){
-        int percent = (int) (correct / total) * 100;
-        String s = "Current Streak : " + streak + "\nTotal Games : " + total + "\nWin percentage : " + percent + "%";
+        double percent = (((double) correct /(double) total) * 100);
+        String rounded = String.format("%.2f", percent);
+        String s = "Current Streak : " + streak + "\nTotal Games : " + total + "\nWin percentage : " + rounded + "%";
         statsText.setText(s);
     }
 

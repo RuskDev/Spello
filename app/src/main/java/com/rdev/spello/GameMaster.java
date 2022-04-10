@@ -33,7 +33,7 @@ public class GameMaster implements Serializable {
         }
         wordResponse = wordLibrary.getRandomWord();
         setAnswer(wordResponse.getWord());
-        gameActivity.showMe(wordResponse.getWord());
+//        gameActivity.showMe(wordResponse.getWord());
     }
 
     public void keyPressed(String let){
